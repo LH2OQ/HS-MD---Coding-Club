@@ -48,4 +48,7 @@ class PDF:
 class TEXT:
 	def readline(text):
 		return text.split("\n")
-			
+		
+	def print(lines):
+		for l in TEXT.readline(lines):
+			print(l)
