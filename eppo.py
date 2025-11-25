@@ -6,32 +6,33 @@ os.system("clear")
 url = "https://gd.eppo.int"
 
 def main():
-	root = HTML.new(url+"/taxon")
-	for l in HTML.links(root):
+	html = HTML.new(url+"/taxon")
+	print(filterLinks(html), "\n")
+	print("\n\n".join([str(u) for u in getUserInstructions()]), "\n")
+	print(apiRequest("BANANA", "xyz"))
+		
+def filterLinks(html):
+	data = ""
+	for l in HTML.links(html):
 		href = l["href"]
 		text = HTML.text(l)
-		for i in range(1, 4):
-			if "PP" + str(i) in text:
-				process(text, href)
-		for i in range(1, 11):
-			if "PM" + str(i) in text:
-				process(text, href)
-	pdf = userInstructions()
-
-def process(text, href):
-	print(text, "\n", href, "\n")
+		if "PP" in text or "PM" in text:
+			data = "\n".join([data, text, href])
+	return data
 	
-def userInstructions():
+def getUserInstructions():
 	text = []
 	pdf = PDF.link("https://gd.eppo.int/media/files/general_user-guide.pdf")
 	for page in pdf.pages:
 		t = TEXT.readline(page.extract_text())
 		text.append(t)
-	for t in text:
-		for l in t:
-			print(l)
-		print()
 	return(text)
+
+def apiRequest(eppoCode, authToken):
+	return HTML.get(
+		f"https://data.eppo.int/api/rest/1.0/taxon/{eppoCode}?",
+		{"authtoken": authToken}
+	)
 
 if __name__ == "__main__":
 	main()
