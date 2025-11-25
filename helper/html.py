@@ -20,3 +20,11 @@ class HTML:
 	
 	def haveClass(html, _class, tag = "div"):
 		return html.find_all(tag, attrs = {"class": _class})
+	
+	def get(url: str, params = {}):
+		response = requests.get(url = url, params = params)
+		return response.json()
+		
+	def post(url: str, data = {}):
+		response = requests.post(url = url, data = data)
+		return response.text
