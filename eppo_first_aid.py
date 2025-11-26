@@ -1,7 +1,6 @@
 from helper.html import HTML
 from helper.files import PATH, PDF, TEXT
 from llm import getClient, askLLM
-import os
 
 
 def filterLinks(html):
