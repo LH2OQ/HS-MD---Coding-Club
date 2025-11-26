@@ -1,10 +1,6 @@
 from helper.html import HTML
 from helper.files import PATH, PDF, TEXT
 from eppo_first_aid import getFirstAid
-import os
-
-url = "https://gd.eppo.int"
-
 
 def main():
 	getFirstAid()
