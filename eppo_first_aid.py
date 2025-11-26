@@ -2,7 +2,6 @@ from helper.html import HTML
 from helper.files import PATH, PDF, TEXT
 from llm import getClient, askLLM
 
-
 def filterLinks(html):
 	data = ""
 	for l in HTML.links(html):
@@ -23,10 +22,9 @@ def getUserInstructions():
 def getFirstAid():
 	html = HTML.new("https://gd.eppo.int/taxon")
 	cwd = PATH.cwd()
-	client = getClient()# Anfrage zur ersten Hilfe:
+# Anfrage zur ersten Hilfe:
 # 	Aufgrund der Liste von Links, den Benutzeranweisungen, sowie schon existenten Skripten
 # 	soll das LLM gennutzt werden, um eine Strategie, bzw das Programm selbst zu entwickeln.
-
 	prompt = f"""
 		Es existiert eine Datenbank auf der Internetseite "www.eppo.int"
 		Folgende Liste zeigt Links für den Zugriff auf verschiedene Bereiche der Datenbank, auf der Pflanzenkrankheiten und Symptome beschrieben sind:
@@ -61,6 +59,4 @@ def getFirstAid():
 		Bitte hilf mir dabei, dieses Programm zu entwickeln.
 		Danke.
 	"""
-	askLLM(client, prompt)
-
-
+	askLLM(getClient(), prompt)
