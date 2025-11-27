@@ -19,7 +19,7 @@ To do this, the [existing API](https://data.eppo.int/documentation/rest) with co
 
 ### Progress to date
 - Creation of [helper functions](https://github.com/LH2OQ/HS-MD---Coding-Club/tree/main/helper) for reading and saving HTML (web pages), text, and PDF (requires the pypdf module), as well as for accessing the LLM
-- Creation of [a script]([helper/eppo_first_aid.py](https://github.com/LH2OQ/HS-MD-- -Coding-Club/blob/main/helper/eppo_first_aid.py)),
+- Creation of [a script]([helper/eppo_first_aid.py](https://github.com/LH2OQ/HS-MD---Coding-Club/blob/main/helper/eppo_first_aid.py)),
   to read the content of the ‘User Instructions’ and specific links to the database from the website and then make a specific request to the LLM, which should help explain/simplify further steps.
   The individual conversations are stored in numbered text files (in the “LLM” folder => created in the current directory if it does not exist) to avoid repeated requests for the same problem and reduce energy consumption.
 
