@@ -11,7 +11,7 @@ Dazu soll die [vorhandene API](https://data.eppo.int/documentation/rest) mit ent
 ### Weitere Schritte
 - Konkrete Strategien und Code für die Anwendung mit Hilfe des LLM erstellen
 - Die konkrete Anwendung ausführbar entwickeln und testen
-- Eventuell eine Art "UI", bzw ein HTML-Formelement (Webseite mit Flask ? ) erstellen, so dass Benutzende dort in einfacher und übersichtlicher Form konkrete Anfragen zu den relevanten Daten stellen können
+- Eventuell eine Art "UI", bzw ein HTML-Formelement (Webseite mit [Flask](https://flask.palletsprojects.com/en/stable/)? ) erstellen, so dass Benutzende dort in einfacher und übersichtlicher Form konkrete Anfragen zu den relevanten Daten stellen können
 
 ## EN
 This application is designed to enable users to query specific information from the database of the [European and Mediterranean Plant Protection Organization](http://eppo.int) with the help of an LLM (Large Language Model).
@@ -26,6 +26,6 @@ To do this, the [existing API](https://data.eppo.int/documentation/rest) with co
 ### Further steps
 - Create concrete strategies and code for the application with the help of the LLM.
 - Develop and test the concrete application executable.
-- Possibly create a kind of “UI” or HTML form element (website with Flask?) so that users can submit specific requests for relevant data in a simple and clear format.
+- Possibly create a kind of “UI” or HTML form element (website with [Flask](https://flask.palletsprojects.com/en/stable/)?) so that users can submit specific requests for relevant data in a simple and clear format.
 
 Translated with DeepL.com (free version)
