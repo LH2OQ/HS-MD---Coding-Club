@@ -1,6 +1,6 @@
 from helper.html import HTML
 from helper.files import PATH, PDF, TEXT
-from llm import getClient, askLLM
+from helper.llm import getClient, askLLM
 
 def filterLinks(html):
 	# find specific links to database
