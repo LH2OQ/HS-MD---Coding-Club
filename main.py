@@ -1,5 +1,4 @@
 from helper.html import HTML
-from helper.files import PATH, PDF, TEXT
 from helper.eppo_first_aid import getFirstAid
 
 def main():
