@@ -43,7 +43,7 @@ def askLLM(client, prompt: str, system_prompt: str = DEFAULT_SYSTEM_PROMPT):
 	folder = PATH.mkdir(PATH.cwd() + "/LLM")
 	# n is the number of files that already exist in that directory (in case of multiple saves, 0 if empty)
 	n = len([name for name in os.listdir(folder) if os.path.isfile(name)])
-	# format prompt and response (+ max. number of tokens) as text, then write to file 
+	# format prompt and response (+ max_tokens) as text, then write to file 
 	text = f"PROMPT:\n\n{prompt}\n\nRESPONSE({MAX_TOKENS}):\n\n{response}"
 	PATH.write(folder + f"/text_{n}", text)
 	print(response)
