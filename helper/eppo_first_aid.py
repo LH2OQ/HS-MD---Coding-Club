@@ -38,22 +38,25 @@ def getFirstAid():
 		Ich möchte ein Programm in Pythoncode schreiben, das je nach Benutzeranfrage auf die Datenbank zugreifen kann und entsprechende Informationen zu Pflanzen, Krankheiten, Symptomen, etc ausgibt.
 		Dazu existieren schon folgende Skripte:
 		
-			### MAINSCRIPT(eppo.py):
+			### README:
+			{PATH.read(cwd+"/README.md")}
+			
+			### MAIN(eppo.py):
 			{PATH.read(cwd+"/eppo.py")}
 		
-			### HELPERSCRIPT(eppo_first_aid.py):
-			{PATH.read(cwd+"/eppo_first_aid.py")}
+			### HELPER(eppo_first_aid.py):
+			{PATH.read(cwd+"/helper/eppo_first_aid.py")}
 			
-			### HELPERSCRIPT(llm.py):
-			{PATH.read(cwd+"/llm.py")}
+			### HELPER(llm.py):
+			{PATH.read(cwd+"/helper/llm.py")}
 			
-			### HELPERSCRIPT(html.py):
+			### HELPER(html.py):
 			{PATH.read(cwd+"/helper/html.py")}
 			
-			### HELPERSCRIPT(text.py):
+			### HELPER(text.py):
 			{PATH.read(cwd+"/helper/files.py")}
 			
-			### HELPERSCRIPT(files.py):
+			### HELPER(files.py):
 			{PATH.read(cwd+"/helper/files.py")}
 			
 		Bitte hilf mir dabei, dieses Programm zu entwickeln.
