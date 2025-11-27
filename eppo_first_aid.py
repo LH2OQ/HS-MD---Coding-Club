@@ -3,6 +3,7 @@ from helper.files import PATH, PDF, TEXT
 from llm import getClient, askLLM
 
 def filterLinks(html):
+	# find specific links to database
 	data = ""
 	for l in HTML.links(html):
 		href = l["href"]
@@ -12,6 +13,7 @@ def filterLinks(html):
 	return data
 	
 def getUserInstructions():
+	# get the user-manual-pdf as text (list)
 	text = []
 	pdf = PDF.link("https://gd.eppo.int/media/files/general_user-guide.pdf")
 	for page in pdf.pages:
@@ -20,11 +22,9 @@ def getUserInstructions():
 	return(text)
 
 def getFirstAid():
+	# use the llm => get strategical knowledge, code, whatever helpful text to develop an application
 	html = HTML.new("https://gd.eppo.int/taxon")
 	cwd = PATH.cwd()
-# Anfrage zur ersten Hilfe:
-# 	Aufgrund der Liste von Links, den Benutzeranweisungen, sowie schon existenten Skripten
-# 	soll das LLM gennutzt werden, um eine Strategie, bzw das Programm selbst zu entwickeln.
 	prompt = f"""
 		Es existiert eine Datenbank auf der Internetseite "www.eppo.int"
 		Folgende Liste zeigt Links für den Zugriff auf verschiedene Bereiche der Datenbank, auf der Pflanzenkrankheiten und Symptome beschrieben sind:
